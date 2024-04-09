@@ -1,1 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choropleth Map with Mapbox and D3_alphatest</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css" rel="stylesheet">
+  <style>
+    /* Add any custom styles for your map containers */
+    #map {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 800px;
+      height: 600px;
+    }
 
+    .legend {
+      font-size: 12px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .legend rect {
+      width: 30px;
+      height: 15px;
+      margin-left: 5px;
+      display: inline-block;
+    }
+
+    .date-selector {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Create a container for the Mapbox map -->
+<div id="map"></div>
+
+<!-- Create a legend div -->
+<div id="legend" class="legend"></div>
+
+<!-- Create a date selector -->
+<div id="dateSelector" class="date-selector">
+  <label for="dates">Select Date:</label>
+  <select id="dates"></select>
+</div>
+
+<script>
+  // Set your Mapbox access token
+  mapboxgl.accessToken = 'pk.eyJ1IjoiaXNhYWN3YXJzdHJpa2VyIiwiYSI6ImNsN2Y1a3p2eTAwNTIzeXFkYmhycDFrZXIifQ.jBYtvo9J-ituSVAwU9Faig';
+
+  // Create an SVG container for the legend
+  var legendSvg = d3.select("#legend").append("svg");
+
+  // Create Mapbox map
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/isaacwarstriker/clog8n1gm006g01qk52hwb0v1',
+    center: [-96, 37.8], // Set the default center
+    zoom: 3 // Set the default zoom
+  });
+
+  // Create an SVG container for the legend
+  var legendSvg = d3.select("#legend").append("svg");
+
+  // Fetch GeoJSON data
+  var geojsonUrl = 'geojson file'; // replace with your GeoJSON file path
+
+  // Fetch GeoJSON data and add GeoJSON layer to the map
+  d3.json(geojsonUrl).then(function(data) {
+    // Extract unique dates from the GeoJSON data
+    var uniqueDates = Array.from(new Set(data.features.map(feature => feature.properties.date)));
+
+    // Create a date selector
+    var dateSelector = d3.select("#dates");
+    dateSelector.selectAll("option")
+      .data(uniqueDates)
+      .enter().append("option")
+      .attr("value", d => d)  // Set the value attribute
+      .text(d => d);
+
+    // Initialize map with the first date
+    updateMap(uniqueDates[0]);
+
+    // Add event listener for date selection
+    dateSelector.on("change", function() {
+      var selectedDate = this.value;
+      updateMap(selectedDate);
+    });
+
+    // Function to update the map based on the selected date
+    function updateMap(selectedDate) {
+      var filteredFeatures = data.features.filter(feature => feature.properties.date === selectedDate);
+
+      // Find the bounds for the filtered features
+      var bounds = new mapboxgl.LngLatBounds();
+      filteredFeatures.forEach(function(feature) {
+        feature.geometry.coordinates[0].forEach(function(point) {
+          bounds.extend(point);
+        });
+      });
+
+      // Fit the map to the bounds
+      map.fitBounds(bounds, { padding: 20 });
+
+      // Remove existing layers
+      if (map.getLayer('choropleth')) {
+        map.removeLayer('choropleth');
+      }
+
+      if (map.getSource('choropleth')) {
+        map.removeSource('choropleth');
+      }
+
+      // Add GeoJSON layer to the map
+      map.addSource('choropleth', {
+        type: 'geojson',
+        data: { type: "FeatureCollection", features: filteredFeatures }
+      });
+
+      // Find the minimum and maximum "prob" values in the GeoJSON data
+      var probExtent = d3.extent(filteredFeatures, function(d) {
+        return d.properties.prob;
+      });
+
+      // Create a color scale based on the "prob" values (logarithmic)
+      var colorScale = d3.scaleSequential(d3.interpolateReds)
+        .domain([0, 100]) // Set the domain to 0 and 100
+        .clamp(true);
+
+      // Add Legend
+      var legend = legendSvg
+        .attr("width", 200)
+        .attr("height", 150)
+        .selectAll("g")
+        .data(colorScale.ticks(5))
+        .join("g")
+        .attr("transform", (d, i) => `translate(0, ${i * 15})`);
+
+      legend.append("rect")
+        .attr("width", 30)
+        .attr("height", 15)
+        .attr("fill", colorScale);
+
+      legend.append("text")
+        .attr("x", 40)
+        .attr("y", 10)
+        .attr("dy", "0.35em")
+        .text(d3.format(".2f"));
+
+      // Apply the color scale to the choropleth layer with adjusted opacity
+      map.addLayer({
+        'id': 'choropleth',
+        'type': 'fill',
+        'source': 'choropleth',
+        'paint': {
+          'fill-color': ['interpolate', ['exponential', 10], ['get', 'prob'], probExtent[0], 'rgba(255,0,0,0.3)', probExtent[1], 'rgba(255,0,0,1)'],
+          'fill-outline-color': 'white',
+          'fill-opacity': 1
+        }
+      });
+
+      // Add click event to show popup
+      map.on('click', 'choropleth', function(e) {
+        var coordinates = e.features[0].geometry.coordinates[0][0];
+        var date = e.features[0].properties.date;
+        var id = e.features[0].properties.h3_id;
+        var prob = e.features[0].properties.prob;
+
+        var popup = new mapboxgl.Popup()
+          .setLngLat(coordinates)
+          .setHTML(`<strong>Date:</strong> ${date}<br><strong>ID:</strong> ${id}<br><strong>Probability:</strong> ${prob}`)
+          .addTo(map);
+
+        // Automatically close the popup after 3 seconds (adjust as needed)
+        setTimeout(function() {
+          popup.remove();
+        }, 3000);
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
