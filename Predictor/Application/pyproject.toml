@@ -6,6 +6,10 @@ authors = ["Oscar Nava <onava@causanatura.org>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+fastapi = "^0.110.1"
+requests = "^2.31.0"
+pandas = "^2.2.2"
+geopandas = "^0.14.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
