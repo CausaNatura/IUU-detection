@@ -10,6 +10,9 @@ fastapi = "^0.110.1"
 requests = "^2.31.0"
 pandas = "^2.2.2"
 geopandas = "^0.14.3"
+uvicorn = "^0.29.0"
+imblearn = "^0.0"
+scikit-learn = "1.2.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
