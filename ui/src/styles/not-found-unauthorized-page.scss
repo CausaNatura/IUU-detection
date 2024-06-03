@@ -1,0 +1,41 @@
+@import './responsive.scss';
+@import './variables.scss';
+
+.error-page {
+  background: var(--url-bg-error-page);
+  width: 100%;
+  height: 100vh;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  .logo-container {
+    width: 80%;
+    margin: 0 auto;
+    @include md {
+      width: 60%;
+    }
+    @include lg {
+      width: 40%;
+    }
+    @include xl {
+      width: 30%;
+    }
+    @include xxl {
+      width: 20%;
+    }
+  }
+  .title {
+    font-size: 30px;
+    font-family: 'Inter-Bold' !important;
+  }
+  .description {
+    font-size: 20px;
+    font-family: 'Inter-Regular';
+  }
+}
+.p {
+  background-color: pink;
+}

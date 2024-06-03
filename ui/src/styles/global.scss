@@ -1,0 +1,131 @@
+/*
+  Los nombres de estas clases siempre deben empezar con g- para saber
+  que provienen de este archivo
+*/
+@import './responsive.scss';
+
+.ant-layout {
+  background: white;
+}
+.g-text-center {
+  text-align: center;
+}
+.g-text-bold {
+  font-family: 'Inter-Semibold' !important;
+}
+.g-text {
+  font-size: 18px;
+  color: #484848;
+  line-height: 160%;
+}
+.g-h1 {
+  font-size: 30px;
+}
+.g-h3 {
+  font-size: 20px;
+}
+.g-table {
+  th {
+    font-size: 15px;
+    color: var(--primary-color) !important;
+  }
+  tr {
+    font-size: 13px;
+    &:nth-child(even) {
+      background: #f3f3f3;
+    }
+  }
+}
+.g-input-search {
+  height: 40px;
+  margin: 15px 0;
+}
+.g-icon-table {
+  padding: 0 10px;
+  border: 0;
+  background: 0;
+  box-shadow: none;
+  font-size: 25px;
+  height: auto;
+}
+.g-btn-new {
+  border: none;
+  box-shadow: none;
+  font-size: 14px;
+  padding: 0;
+  font-family: 'Inter-Bold';
+  color: var(--btn-new-element);
+  .g-icon {
+    font-size: 20px;
+  }
+}
+.g-flex {
+  display: flex;
+}
+.g-end {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.g-align-center {
+  align-items: center;
+}
+.g-between {
+  justify-content: space-between;
+}
+.g-login-microsoft {
+  button {
+    background: #00a3ee;
+  }
+}
+.g-logo-container {
+  text-align: center;
+  img {
+    width: var(--width-logo-sm) !important;
+    @include md {
+      width: var(--width-logo-md) !important;
+    }
+    @include lg {
+      width: var(--width-logo-lg) !important;
+    }
+    @include xl {
+      width: var(--width-logo-xl) !important;
+    }
+  }
+}
+.g-logo {
+  img {
+    width: var(--width-logo-student-sm) !important;
+    @include md {
+      width: var(--width-logo-student-md) !important;
+    }
+    @include lg {
+      width: var(--width-logo-student-lg) !important;
+    }
+    @include xl {
+      width: var(--width-logo-student-xl) !important;
+    }
+  }
+}
+.g-logo-footer {
+  img {
+    width: var(--width-logo-footer-sm) !important;
+    @include md {
+      width: var(--width-logo-footer-md) !important;
+    }
+    @include lg {
+      width: var(--width-logo-footer-lg) !important;
+    }
+    @include xl {
+      width: var(--width-logo-footer-xl) !important;
+    }
+  }
+}
+.title {
+  color: var(--title-manager-color);
+  font-family: 'Inter-Semibold' !important;
+}
+.title-error {
+  color: var(--title-error-color);
+  font-size: 50px;
+  font-family: 'Inter-Semibold' !important;
+}

@@ -1,0 +1,254 @@
+@import './responsive.scss';
+
+$sizes: 20;
+$rem-size: 0.25rem;
+
+@mixin padding-classes {
+  @for $i from 0 through $sizes {
+    $padding: $i * $rem-size;
+    .p-#{$i} {
+      padding: $padding;
+    }
+    .pl-#{$i} {
+      padding-left: $padding;
+    }
+    .pr-#{$i} {
+      padding-right: $padding;
+    }
+    .pt-#{$i} {
+      padding-top: $padding;
+    }
+    .pb-#{$i} {
+      padding-bottom: $padding;
+    }
+    .px-#{$i} {
+      padding-left: $padding;
+      padding-right: $padding;
+    }
+    .py-#{$i} {
+      padding-top: $padding;
+      padding-bottom: $padding;
+    }
+  }
+}
+@include padding-classes;
+
+@mixin padding-sm-classes {
+  @for $i from 0 through $sizes {
+    $padding: $i * $rem-size;
+    .sm-p-#{$i} {
+      @include sm {
+        padding: $padding;
+      }
+    }
+    .sm-pl-#{$i} {
+      @include sm {
+        padding-left: $padding;
+      }
+    }
+    .sm-pr-#{$i} {
+      @include sm {
+        padding-right: $padding;
+      }
+    }
+    .sm-pt-#{$i} {
+      @include sm {
+        padding-top: $padding;
+      }
+    }
+    .sm-pb-#{$i} {
+      @include sm {
+        padding-bottom: $padding;
+      }
+    }
+    .sm-px-#{$i} {
+      @include sm {
+        padding-left: $padding;
+        padding-right: $padding;
+      }
+    }
+    .sm-py-#{$i} {
+      @include sm {
+        padding-top: $padding;
+        padding-bottom: $padding;
+      }
+    }
+  }
+}
+@include padding-sm-classes;
+
+@mixin padding-md-classes {
+  @for $i from 0 through $sizes {
+    $padding: $i * $rem-size;
+    .md-p-#{$i} {
+      @include md {
+        padding: $padding;
+      }
+    }
+    .md-pl-#{$i} {
+      @include md {
+        padding-left: $padding;
+      }
+    }
+    .md-pr-#{$i} {
+      @include md {
+        padding-right: $padding;
+      }
+    }
+    .md-pt-#{$i} {
+      @include md {
+        padding-top: $padding;
+      }
+    }
+    .md-pb-#{$i} {
+      @include md {
+        padding-bottom: $padding;
+      }
+    }
+    .md-px-#{$i} {
+      @include md {
+        padding-left: $padding;
+        padding-right: $padding;
+      }
+    }
+    .md-py-#{$i} {
+      @include md {
+        padding-top: $padding;
+        padding-bottom: $padding;
+      }
+    }
+  }
+}
+@include padding-md-classes;
+
+@mixin padding-lg-classes {
+  @for $i from 0 through $sizes {
+    $padding: $i * $rem-size;
+    .lg-p-#{$i} {
+      @include lg {
+        padding: $padding;
+      }
+    }
+    .lg-pl-#{$i} {
+      @include lg {
+        padding-left: $padding;
+      }
+    }
+    .lg-pr-#{$i} {
+      @include lg {
+        padding-right: $padding;
+      }
+    }
+    .lg-pt-#{$i} {
+      @include lg {
+        padding-top: $padding;
+      }
+    }
+    .lg-pb-#{$i} {
+      @include lg {
+        padding-bottom: $padding;
+      }
+    }
+    .lg-px-#{$i} {
+      @include lg {
+        padding-left: $padding;
+        padding-right: $padding;
+      }
+    }
+    .lg-py-#{$i} {
+      @include lg {
+        padding-top: $padding;
+        padding-bottom: $padding;
+      }
+    }
+  }
+}
+@include padding-lg-classes;
+
+@mixin padding-xl-classes {
+  @for $i from 0 through $sizes {
+    $padding: $i * $rem-size;
+    .xl-p-#{$i} {
+      @include xl {
+        padding: $padding;
+      }
+    }
+    .xl-pl-#{$i} {
+      @include xl {
+        padding-left: $padding;
+      }
+    }
+    .xl-pr-#{$i} {
+      @include xl {
+        padding-right: $padding;
+      }
+    }
+    .xl-pt-#{$i} {
+      @include xl {
+        padding-top: $padding;
+      }
+    }
+    .xl-pb-#{$i} {
+      @include xl {
+        padding-bottom: $padding;
+      }
+    }
+    .xl-px-#{$i} {
+      @include xl {
+        padding-left: $padding;
+        padding-right: $padding;
+      }
+    }
+    .xl-py-#{$i} {
+      @include xl {
+        padding-top: $padding;
+        padding-bottom: $padding;
+      }
+    }
+  }
+}
+@include padding-xl-classes;
+
+@mixin padding-xxl-classes {
+  @for $i from 0 through $sizes {
+    $padding: $i * $rem-size;
+    .xxl-p-#{$i} {
+      @include xxl {
+        padding: $padding;
+      }
+    }
+    .xxl-pl-#{$i} {
+      @include xxl {
+        padding-left: $padding;
+      }
+    }
+    .xxl-pr-#{$i} {
+      @include xxl {
+        padding-right: $padding;
+      }
+    }
+    .xxl-pt-#{$i} {
+      @include xxl {
+        padding-top: $padding;
+      }
+    }
+    .xxl-pb-#{$i} {
+      @include xxl {
+        padding-bottom: $padding;
+      }
+    }
+    .xxl-px-#{$i} {
+      @include xxl {
+        padding-left: $padding;
+        padding-right: $padding;
+      }
+    }
+    .xxl-py-#{$i} {
+      @include xxl {
+        padding-top: $padding;
+        padding-bottom: $padding;
+      }
+    }
+  }
+}
+@include padding-xxl-classes;

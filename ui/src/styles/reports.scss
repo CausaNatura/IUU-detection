@@ -1,0 +1,57 @@
+#reports-manager-page {
+  .table {
+    th {
+      font-family: 'Inter-Medium';
+      font-size: 15px;
+      color: var(--primary-color);
+      background-color: transparent;
+    }
+    td {
+      color: var(--dark-color);
+      font-family: 'Inter-Regular';
+      font-size: 15px;
+    }
+    tr {
+      &:nth-child(even) {
+        background: #f3f3f3;
+      }
+    }
+    .status-tag {
+      color: white;
+      font-family: 'Inter-Regular';
+      font-size: 12px;
+      border: none;
+    }
+    .pending-tag {
+      background-color: var(--grey-color);
+    }
+    .success-tag {
+      background-color: var(--success-color);
+    }
+    .cancelled-tag {
+      background-color: var(--warning-color);
+      color: var(--dark-color);
+    }
+    .error-tag {
+      background-color: var(--error-color);
+    }
+    .progress-bar {
+      cursor: pointer;
+      .ant-progress-inner {
+        border: 2px solid var(--primary-color);
+      }
+    }
+    .download-btn {
+      color: var(--primary-color);
+      .download-icn {
+        font-size: 20px;
+      }
+    }
+    .cancel-btn {
+      color: var(--error-color);
+      .cancel-icn {
+        font-size: 20px;
+      }
+    }
+  }
+}

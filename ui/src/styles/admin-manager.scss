@@ -1,0 +1,17 @@
+@import './notification.scss';
+
+#admin-manager {
+  .table-info {
+    th {
+      background: white;
+      color: var(--primary-color);
+      font-family: 'Inter-Bold' !important;
+    }
+    .edit {
+      color: var(--primary-color);
+    }
+    .delete {
+      color: var(--error-color);
+    }
+  }
+}

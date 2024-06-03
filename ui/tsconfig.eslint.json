@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "buildOptions": {
+    "baseUrl": "./"
+  },
+  "include": ["./**/*.ts", "./**/*.js", "./.*.js", "./**/*.tsx"]
+}

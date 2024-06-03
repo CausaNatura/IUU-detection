@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Inter-Black';
+  src: url('/assets/fonts/Inter-Black.ttf') format('OpenType');
+}
+@font-face {
+  font-family: 'Inter-Bold';
+  src: url('/assets/fonts/Inter-Bold.ttf') format('OpenType');
+}
+@font-face {
+  font-family: 'Inter-BoldItalic';
+  src: url('/assets/fonts/Inter-BoldItalic.ttf') format('OpenType');
+}
+@font-face {
+  font-family: 'Inter-ExtraBold';
+  src: url('/assets/fonts/Inter-ExtraBold.ttf') format('OpenType');
+}
+@font-face {
+  font-family: 'Inter-ExtraLight';
+  src: url('/assets/fonts/Inter-ExtraLight.ttf') format('OpenType');
+}
+@font-face {
+  font-family: 'Inter-Light';
+  src: url('/assets/fonts/Inter-Light.ttf') format('OpenType');
+}
+@font-face {
+  font-family: 'Inter-Medium';
+  src: url('/assets/fonts/Inter-Medium.ttf') format('OpenType');
+}
+@font-face {
+  font-family: 'Inter-Regular';
+  src: url('/assets/fonts/Inter-Regular.ttf') format('OpenType');
+}
+@font-face {
+  font-family: 'Inter-SemiBold';
+  src: url('/assets/fonts/Inter-SemiBold.ttf') format('OpenType');
+}
+@font-face {
+  font-family: 'Inter-Thin';
+  src: url('/assets/fonts/Inter-Thin.ttf') format('OpenType');
+}

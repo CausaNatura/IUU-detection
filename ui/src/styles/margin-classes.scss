@@ -1,0 +1,254 @@
+@import './responsive.scss';
+
+$sizes: 20;
+$rem-size: 0.25rem;
+
+@mixin margin-classes {
+  @for $i from 0 through $sizes {
+    $margin: $i * $rem-size;
+    .m-#{$i} {
+      margin: $margin;
+    }
+    .ml-#{$i} {
+      margin-left: $margin;
+    }
+    .mr-#{$i} {
+      margin-right: $margin;
+    }
+    .mt-#{$i} {
+      margin-top: $margin;
+    }
+    .mb-#{$i} {
+      margin-bottom: $margin !important;
+    }
+    .mx-#{$i} {
+      margin-left: $margin;
+      margin-right: $margin;
+    }
+    .my-#{$i} {
+      margin-top: $margin;
+      margin-bottom: $margin;
+    }
+  }
+}
+@include margin-classes;
+
+@mixin margin-sm-classes {
+  @for $i from 0 through $sizes {
+    $margin: $i * $rem-size;
+    .sm-m-#{$i} {
+      @include sm {
+        margin: $margin;
+      }
+    }
+    .sm-ml-#{$i} {
+      @include sm {
+        margin-left: $margin;
+      }
+    }
+    .sm-mr-#{$i} {
+      @include sm {
+        margin-right: $margin;
+      }
+    }
+    .sm-mt-#{$i} {
+      @include sm {
+        margin-top: $margin;
+      }
+    }
+    .sm-mb-#{$i} {
+      @include sm {
+        margin-bottom: $margin !important;
+      }
+    }
+    .sm-mx-#{$i} {
+      @include sm {
+        margin-left: $margin;
+        margin-right: $margin;
+      }
+    }
+    .sm-my-#{$i} {
+      @include sm {
+        margin-top: $margin;
+        margin-bottom: $margin;
+      }
+    }
+  }
+}
+@include margin-sm-classes;
+
+@mixin margin-md-classes {
+  @for $i from 0 through $sizes {
+    $margin: $i * $rem-size;
+    .md-m-#{$i} {
+      @include md {
+        margin: $margin;
+      }
+    }
+    .md-ml-#{$i} {
+      @include md {
+        margin-left: $margin;
+      }
+    }
+    .md-mr-#{$i} {
+      @include md {
+        margin-right: $margin;
+      }
+    }
+    .md-mt-#{$i} {
+      @include md {
+        margin-top: $margin;
+      }
+    }
+    .md-mb-#{$i} {
+      @include md {
+        margin-bottom: $margin !important;
+      }
+    }
+    .md-mx-#{$i} {
+      @include md {
+        margin-left: $margin;
+        margin-right: $margin;
+      }
+    }
+    .md-my-#{$i} {
+      @include md {
+        margin-top: $margin;
+        margin-bottom: $margin;
+      }
+    }
+  }
+}
+@include margin-md-classes;
+
+@mixin margin-lg-classes {
+  @for $i from 0 through $sizes {
+    $margin: $i * $rem-size;
+    .lg-m-#{$i} {
+      @include lg {
+        margin: $margin;
+      }
+    }
+    .lg-ml-#{$i} {
+      @include lg {
+        margin-left: $margin;
+      }
+    }
+    .lg-mr-#{$i} {
+      @include lg {
+        margin-right: $margin;
+      }
+    }
+    .lg-mt-#{$i} {
+      @include lg {
+        margin-top: $margin;
+      }
+    }
+    .lg-mb-#{$i} {
+      @include lg {
+        margin-bottom: $margin !important;
+      }
+    }
+    .lg-mx-#{$i} {
+      @include lg {
+        margin-left: $margin;
+        margin-right: $margin;
+      }
+    }
+    .lg-my-#{$i} {
+      @include lg {
+        margin-top: $margin;
+        margin-bottom: $margin;
+      }
+    }
+  }
+}
+@include margin-lg-classes;
+
+@mixin margin-xl-classes {
+  @for $i from 0 through $sizes {
+    $margin: $i * $rem-size;
+    .xl-m-#{$i} {
+      @include xl {
+        margin: $margin;
+      }
+    }
+    .xl-ml-#{$i} {
+      @include xl {
+        margin-left: $margin;
+      }
+    }
+    .xl-mr-#{$i} {
+      @include xl {
+        margin-right: $margin;
+      }
+    }
+    .xl-mt-#{$i} {
+      @include xl {
+        margin-top: $margin;
+      }
+    }
+    .xl-mb-#{$i} {
+      @include xl {
+        margin-bottom: $margin !important;
+      }
+    }
+    .xl-mx-#{$i} {
+      @include xl {
+        margin-left: $margin;
+        margin-right: $margin;
+      }
+    }
+    .xl-my-#{$i} {
+      @include xl {
+        margin-top: $margin;
+        margin-bottom: $margin;
+      }
+    }
+  }
+}
+@include margin-xl-classes;
+
+@mixin margin-xxl-classes {
+  @for $i from 0 through $sizes {
+    $margin: $i * $rem-size;
+    .xxl-m-#{$i} {
+      @include xxl {
+        margin: $margin;
+      }
+    }
+    .xxl-ml-#{$i} {
+      @include xxl {
+        margin-left: $margin;
+      }
+    }
+    .xxl-mr-#{$i} {
+      @include xxl {
+        margin-right: $margin;
+      }
+    }
+    .xxl-mt-#{$i} {
+      @include xxl {
+        margin-top: $margin;
+      }
+    }
+    .xxl-mb-#{$i} {
+      @include xxl {
+        margin-bottom: $margin !important;
+      }
+    }
+    .xxl-mx-#{$i} {
+      @include xxl {
+        margin-left: $margin;
+        margin-right: $margin;
+      }
+    }
+    .xxl-my-#{$i} {
+      @include xxl {
+        margin-top: $margin;
+        margin-bottom: $margin;
+      }
+    }
+  }
+}
+@include margin-xxl-classes;

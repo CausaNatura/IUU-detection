@@ -1,0 +1,21 @@
+@import './variables.scss';
+
+.landing-page {
+  .title {
+    text-align: center;
+    font-family: 'Inter-Bold';
+    color: var(--title-text-color);
+  }
+
+  .name {
+    font-family: 'Inter-BoldItalic';
+  }
+
+  .description {
+    font-family: 'Inter-Light';
+    color: var(--title-text-color);
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+}

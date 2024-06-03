@@ -1,0 +1,56 @@
+@import './responsive.scss';
+@import './variables.scss';
+
+.header {
+  background: var(--primary-color);
+  height: auto;
+  display: block;
+  text-align: center;
+  @include lg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.header-container {
+  width: 100%;
+  .logo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    img {
+      align-items: center;
+    }
+    @include lg {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+.student-menu {
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border-bottom: 0;
+  @include lg {
+    justify-content: flex-end;
+  }
+}
+.student-logout {
+  color: white;
+  text-align: center;
+  line-height: 150%;
+  .name {
+    font-family: 'Inter-Bold';
+  }
+  @include md {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @include lg {
+    text-align: right;
+    justify-content: flex-end;
+  }
+}

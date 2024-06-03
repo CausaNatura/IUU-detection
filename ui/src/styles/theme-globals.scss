@@ -1,0 +1,217 @@
+/*
+  Los nombres de estas clases siempre deben empezar con tg- (theme globals) 
+  para saber que provienen de este archivo
+*/
+
+@import './responsive.scss';
+@import './variables.scss';
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div {
+  font-family: 'Inter-Regular' !important;
+}
+.tg-main-layout-container {
+  min-height: 100vh;
+  padding: 30px 16px;
+  background-image: var(--url-bg);
+  background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+  background-position: center; /* Centra la imagen en el contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  @include md {
+    padding: 60px;
+  }
+}
+
+.tg-simple-layout-container {
+  min-height: 100vh;
+}
+
+.tg-button {
+  width: auto;
+  font-size: 16px;
+  height: auto;
+  cursor: pointer;
+  padding: 5px 30px;
+  box-shadow: none;
+  font-family: 'Inter-Semibold' !important;
+}
+
+.tg-primary-default-btn {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  &:hover {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: 1px solid var(--primary-color) !important;
+  }
+}
+.tg-secondary-default-btn {
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  &:hover {
+    background-color: var(--secondary-color) !important;
+    color: var(--dark-color) !important;
+    border: 1px solid var(--secondary-color) !important;
+  }
+}
+
+.tg-secondary-btn {
+  background-color: var(--secondary-color);
+  color: var(--color-secondary-button) !important;
+  font-family: 'Inter-Semibold';
+  border: none;
+  font-size: 16px;
+  height: auto;
+  padding: 10px 20px;
+  width: 100%;
+
+  &:hover {
+    background: var(--secondary-color-hover) !important;
+  }
+  @include md {
+    width: auto;
+    padding: 10px 50px;
+  }
+}
+
+.tg-secondary-text {
+  color: var(--secondary-color);
+}
+
+.tg-redirect-login-txt {
+  color: white;
+  font-family: 'Inter-Bold';
+  font-size: 15px;
+  a {
+    font-size: 15px !important;
+  }
+  span {
+    color: var(--secondary-color);
+    cursor: pointer;
+  }
+}
+.tg-cancel-button {
+  background: var(--error-color);
+  &:hover {
+    background: var(--error-color-hover) !important;
+  }
+}
+.tg-error {
+  color: var(--error-color);
+}
+.tg-success {
+  color: var(--success-color);
+}
+.tg-main-layout-title {
+  color: var(--layout-title-color);
+  font-family: 'Inter-Bold';
+  text-align: center;
+}
+.tg-title {
+  font-family: 'Inter-Bold' !important;
+  color: var(--primary-color);
+}
+.tg-main-layout-card {
+  .ant-card-body {
+    padding: 30px;
+  }
+  width: 100%;
+  background-color: var(--primary-accent-color);
+  border: 1.5px solid var(--second-accent-color);
+  border-radius: 10px;
+}
+
+.tg-main-layout-form {
+  .ant-form-item-label {
+    label {
+      font-size: 15px;
+      font-family: 'Inter-Regular';
+      color: var(--label-layout-color);
+    }
+  }
+}
+
+.tg-form-bg-light {
+  .ant-form-item-label {
+    label {
+      color: var(--dark-color);
+    }
+  }
+}
+
+.tg-set-password-page-error-txt {
+  font-size: 15px;
+  font-family: 'Inter-Regular';
+}
+.tg-link-text {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  font-size: inherit;
+  color: var(--secondary-color);
+  &:hover {
+    text-decoration: underline;
+    color: var(--secondary-color-hover) !important;
+    background: transparent !important;
+  }
+}
+
+#help-float-button {
+  .tg-float-button {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    .icon-float-button {
+      font-size: 70px;
+      position: relative;
+      display: block;
+      color: var(--help-button-color);
+    }
+  }
+}
+.ant-popover-inner {
+  width: 500px;
+}
+.tg-help-popover-text {
+  text-align: right;
+  margin-right: 12px;
+  p {
+    font-family: 'Inter-Regular';
+    font-size: 15px;
+  }
+}
+.ant-form-item .ant-form-item-explain-error {
+  color: var(--error-color);
+}
+.tg-dragger-upload {
+  .ant-upload-drag {
+    margin: 20px 0;
+    border-color: var(--primary-color);
+    background: white;
+    font-size: 15px;
+    color: var(--primary-color);
+    &:hover {
+      border-color: var(--second-color);
+      background-color: #ededed;
+    }
+  }
+  .tg-icon-dragger {
+    font-size: 50px;
+    display: block;
+  }
+}
+.tg-text-foreign-student {
+  color: var(--foreign-student-color) !important;
+}
