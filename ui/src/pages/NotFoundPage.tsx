@@ -2,12 +2,10 @@ import { Button, Row, Col, Image } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import 'styles/not-found-unauthorized-page.scss';
 import Image404 from 'assets/icn-404.svg';
-import { GetThemeFolder } from 'hooks/getThemeFolder';
 import { PageTitle } from 'components/common/PageTitle';
 
 export const NotFoundPage = () => {
   const navigate = useNavigate();
-  const assetsFolder = GetThemeFolder('assets');
 
   return (
     <>
@@ -15,7 +13,7 @@ export const NotFoundPage = () => {
       <Row className="error-page px-10">
         <Col xs={24}>
           <div className="g-logo-container mb-10 md-mb-0">
-            <Image src={`/${assetsFolder}/logo.png`} preview={false} />
+            <Image src={`/logo.png`} preview={false} />
           </div>
           <div className="pt-5 md-pt-20">
             <Image src={Image404} preview={false} />
