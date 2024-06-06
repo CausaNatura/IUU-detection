@@ -1,7 +1,5 @@
 import { Button, Row, Col, Image } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import 'styles/not-found-unauthorized-page.scss';
-import Image403 from 'assets/icn-403.png';
 import { PageTitle } from 'components/common/PageTitle';
 
 export const UnauthorizedPage = () => {
@@ -16,7 +14,7 @@ export const UnauthorizedPage = () => {
             <Image src={`/logo.png`} preview={false} />
           </div>
           <div className="pt-5 md-pt-20">
-            <Image src={Image403} preview={false} />
+            <Image src='{Image403}' preview={false} />
             <h2 className="title-error">403</h2>
             <h3 className="description">
               Lo sentimos, no estás autorizado a acceder a esta página

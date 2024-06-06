@@ -1,7 +1,5 @@
 import { Button, Row, Col, Image } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import 'styles/not-found-unauthorized-page.scss';
-import Image404 from 'assets/icn-404.svg';
 import { PageTitle } from 'components/common/PageTitle';
 
 export const NotFoundPage = () => {
@@ -16,7 +14,7 @@ export const NotFoundPage = () => {
             <Image src={`/logo.png`} preview={false} />
           </div>
           <div className="pt-5 md-pt-20">
-            <Image src={Image404} preview={false} />
+            <Image src='{Image404}' preview={false} />
             <h2 className="title-error">404</h2>
             <h3 className="description">
               Lo sentimos, la página que buscas no existe.

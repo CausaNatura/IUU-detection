@@ -3,10 +3,8 @@ import { Outlet } from 'react-router-dom';
 import { Content, Header } from 'antd/es/layout/layout';
 import { Link } from 'react-router-dom';
 import { paths } from '../../constants/paths';
-import 'styles/student-layout.scss';
 
 const SimpleHeaderLayout = () => {
-
   return (
     <Layout className="tg-simple-layout-container">
       <Header className="header py-1">

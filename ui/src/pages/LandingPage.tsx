@@ -2,7 +2,6 @@ import { Card, Col, Row, Image } from 'antd';
 import 'styles/global.scss';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { RedirectToRightLogin } from 'components/common/RedirectToRightLogin';
-import 'styles/landing-page.scss';
 import { Link } from 'react-router-dom';
 import { paths } from 'constants/paths';
 import { PageTitle } from 'components/common/PageTitle';

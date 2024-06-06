@@ -10,7 +10,7 @@ import { NotFoundPage } from 'pages/NotFoundPage';
 import { UnauthorizedPage } from 'pages/UnauthorizedPage';
 import SimpleHeaderLayout from 'components/layouts/SimpleHeaderLayout';
 import Logout from 'pages/auth/Logout';
-import 'styles/theme-globals.scss';
+import 'styles/global.scss';
 
 const adminProtectedLayout = (userType: 'admin', role?: number) => {
   return (
@@ -28,8 +28,7 @@ export const AppRouter = () => {
       <Routes>
         <Route path={paths.global.index} element={<MainLayout />}>
           <Route index element={<LandingPage />} />
-          <Route path={paths.forgotPassword.index}>
-          </Route>
+          <Route path={paths.forgotPassword.index}></Route>
           <Route path={paths.auth.index}>
             <Route path={paths.auth.logout} element={<Logout />} />
           </Route>

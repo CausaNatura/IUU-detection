@@ -4,7 +4,6 @@ import { Content, Header } from 'antd/es/layout/layout';
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { VerticalAlignTopOutlined } from '@ant-design/icons';
-import 'styles/admin-layout.scss';
 
 const AdminLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -12,9 +11,7 @@ const AdminLayout = () => {
   return (
     <Layout className="tg-simple-layout-container">
       <Row>
-        <Col xl={24}>
-          {/* <SiderComponent collapsed={collapsed} /> */}
-        </Col>
+        <Col xl={24}>{/* <SiderComponent collapsed={collapsed} /> */}</Col>
       </Row>
       <Layout>
         <Header className="collapse-btn-header">
