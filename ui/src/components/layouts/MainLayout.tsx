@@ -1,11 +1,15 @@
 import { Layout } from 'antd';
-import { Content } from 'antd/es/layout/layout';
+import { Content, Header } from 'antd/es/layout/layout';
 import { Outlet } from 'react-router-dom';
+import HeaderContent from 'components/common/Header';
 
 const MainLayout = () => {
   return (
-    <Layout className="tg-main-layout-container">
-      <Content>
+    <Layout className="g-main-layout">
+      <Header>
+        <HeaderContent />
+      </Header>
+      <Content className="g-main-layout-container">
         <Outlet />
       </Content>
     </Layout>
