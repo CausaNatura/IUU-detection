@@ -1,0 +1,43 @@
+@import '../styles/colors.scss';
+
+.ant-layout-header {
+  height: auto;
+  background: white;
+  box-shadow: 0 2px 20px rgba($color: #000000, $alpha: 0.05);
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+}
+.user-link {
+  padding: 50px;
+  &:hover {
+    background: $primary1;
+    .icon,
+    .username {
+      color: white;
+    }
+  }
+  .icon {
+    font-size: 30px;
+    color: $primary1;
+  }
+  .username {
+    color: $primary1;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+}
+.ant-dropdown {
+    text-align: right;
+    bottom: -80px!important;
+    .ant-dropdown-menu {
+      border-radius: 0 0 50px 50px!important;   
+      overflow: hidden;
+    }
+    .ant-dropdown-menu-item  {
+        padding:15px 40px!important;
+    }
+}
