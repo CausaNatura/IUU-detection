@@ -4,7 +4,6 @@ import { errorColumns } from 'constants/uploadErrorsColums';
 import { WarningOutlined } from '@ant-design/icons';
 import { PageTitle } from 'components/common/PageTitle';
 import { useNavigate } from 'react-router-dom';
-import 'styles/upload-error-page.scss';
 
 const UploadErrorsPage = () => {
   const location = useLocation();

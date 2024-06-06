@@ -1,15 +1,10 @@
 import { Layout, Image, Row, Col, Button } from 'antd';
 import { Outlet } from 'react-router-dom';
 import { Content, Header } from 'antd/es/layout/layout';
-import { GetThemeFolder } from '../../hooks/getThemeFolder';
 import { Link } from 'react-router-dom';
 import { paths } from '../../constants/paths';
-import { HelpFloatButton } from 'components/common/HelpFloatButton';
-import 'styles/student-layout.scss';
 
 const SimpleHeaderLayout = () => {
-  const assetsFolder = GetThemeFolder('assets');
-
   return (
     <Layout className="tg-simple-layout-container">
       <Header className="header py-1">
@@ -17,7 +12,7 @@ const SimpleHeaderLayout = () => {
           <Col className="logo" xs={24} md={10} lg={4} xl={3}>
             <Image
               className="mt-2 mb-6 md-mb-10 lg-mb-2"
-              src={`/${assetsFolder}/logo.png`}
+              src={`/logo.png`}
               preview={false}
             />
           </Col>
@@ -45,10 +40,9 @@ const SimpleHeaderLayout = () => {
           md={{ span: 4, offset: 1 }}
           lg={{ span: 2, offset: 1 }}
         >
-          <Image src={`/${assetsFolder}/logo-footer.jpg`} preview={false} />
+          <Image src={`/logo-footer.jpg`} preview={false} />
         </Col>
       </Row>
-      <HelpFloatButton />
     </Layout>
   );
 };
