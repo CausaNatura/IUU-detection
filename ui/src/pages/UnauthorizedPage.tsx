@@ -14,7 +14,7 @@ export const UnauthorizedPage = () => {
             <Image src={`/logo.png`} preview={false} />
           </div>
           <div className="pt-5 md-pt-20">
-            <Image src='{Image403}' preview={false} />
+            <Image src="{Image403}" preview={false} />
             <h2 className="title-error">403</h2>
             <h3 className="description">
               Lo sentimos, no estás autorizado a acceder a esta página
