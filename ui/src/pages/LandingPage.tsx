@@ -9,12 +9,10 @@ const LandingPage = () => {
     <div className="landing-page">
       <PageTitle>Predictor de Riesgos | </PageTitle>
       <Row>
-        <Col xs={16}>
-          .
-        </Col>
-        <Col className='g-left-container' xs={8}>
-          <Scale/>
-          <Zone/>
+        <Col xs={16}>.</Col>
+        <Col className="g-left-container" xs={8}>
+          <Scale />
+          <Zone />
         </Col>
       </Row>
     </div>
