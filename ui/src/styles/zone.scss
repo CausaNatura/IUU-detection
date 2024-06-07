@@ -2,7 +2,8 @@
 
 .zone-container {
   text-align: center;
-  padding: 40px;
+  padding: 40px 40px 60px 40px;
+  border-bottom: 1px solid $disabled;
   h2 {
     font-size: 18px;
     color: $primary2;
@@ -38,6 +39,22 @@
       img {
         width: 30px;
       }
+    }
+  }
+  .calendar {
+      border-color: $primary1;
+      color: $primary1;
+      border-radius: 100px;
+      width: 100%;
+      padding: 10px 25px;
+      .ant-picker-input {
+          input {
+            font-size: 20px; 
+        }
+      }
+    .ant-picker-suffix {
+        color: $primary1;
+        font-size: 20px;
     }
   }
 }
