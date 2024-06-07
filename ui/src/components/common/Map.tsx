@@ -3,12 +3,12 @@ import '../../styles/map.scss';
 import InfoButton from './InfoButton';
 
 type ButtonProps = {
-  text: string,
-  btnClass: string,
-  btnDefault?: 'disabled' | '',
-}
+  text: string;
+  btnClass: string;
+  btnDefault?: 'disabled' | '';
+};
 
-function ButtonView({ text, btnClass, btnDefault = ''  } : ButtonProps) {
+function ButtonView({ text, btnClass, btnDefault = '' }: ButtonProps) {
   return (
     <Button className={`${btnDefault}` + ' btn-action'} href="#">
       <div className={`${btnClass}` + ' btn-icon'} />
@@ -20,8 +20,8 @@ function ButtonView({ text, btnClass, btnDefault = ''  } : ButtonProps) {
 const Map = () => {
   return (
     <div className="map-container">
-      <ButtonView text='Alertas' btnClass='alerta' btnDefault='disabled' />
-      <ButtonView text='Bitácora' btnClass='bitacora' btnDefault='' />
+      <ButtonView text="Alertas" btnClass="alerta" btnDefault="disabled" />
+      <ButtonView text="Bitácora" btnClass="bitacora" btnDefault="" />
       <InfoButton />
     </div>
   );
