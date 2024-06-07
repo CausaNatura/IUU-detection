@@ -5,14 +5,20 @@ import { RedirectToRightLogin } from 'components/common/RedirectToRightLogin';
 import { Link } from 'react-router-dom';
 import { paths } from 'constants/paths';
 import { PageTitle } from 'components/common/PageTitle';
+import Scale from 'components/common/Scale';
+import Zone from 'components/common/Zone';
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
       <PageTitle>Predictor de Riesgos | </PageTitle>
-      <Row justify="center" align="middle">
-        <Col xs={24} className="g-logo-container">
-          <Image src={`/logo.png`} preview={false} />
+      <Row>
+        <Col xs={16}>
+          .
+        </Col>
+        <Col className='g-left-container' xs={8}>
+          <Scale/>
+          <Zone/>
         </Col>
       </Row>
       <Row justify="center" className="mt-20">
