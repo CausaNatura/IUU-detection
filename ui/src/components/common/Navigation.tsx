@@ -7,21 +7,18 @@ type MenuItem = Required<MenuProps>['items'][number];
 
 const items: MenuItem[] = [
     {
-      label: 'Navigation One',
-      key: 'mail',
+      label: 'Predictor de Probabilidades',
+      key: 'predictor',
     },
     {
-      label: 'Navigation Two',
-      key: 'app',
+      label: 'Zonas de mayor influencia',
+      key: 'influencia',
       disabled: true,
     },
     {
-      key: 'alipay',
-      label: (
-        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-          Navigation Four - Link
-        </a>
-      ),
+      label: 'Análisis de rutas',
+      key: 'rutas',
+      disabled: true,
     },
   ];
 
@@ -29,7 +26,6 @@ const items: MenuItem[] = [
   const NavMenu = () => {
     const [current, setCurrent] = useState('mail');
     const onClick: MenuProps['onClick'] = (e) => {
-        console.log('click ', e);
         setCurrent(e.key);
       };
     return (
