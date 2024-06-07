@@ -1,5 +1,6 @@
 import { Button } from 'antd';
 import '../../styles/map.scss';
+import InfoButton from './InfoButton';
 
 type ButtonProps = {
   text: string,
@@ -21,6 +22,7 @@ const Map = () => {
     <div className="map-container">
       <ButtonView text='Alertas' btnClass='alerta' btnDefault='disabled' />
       <ButtonView text='Bitácora' btnClass='bitacora' btnDefault='' />
+      <InfoButton />
     </div>
   );
 };

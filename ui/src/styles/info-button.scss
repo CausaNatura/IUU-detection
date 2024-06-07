@@ -1,0 +1,89 @@
+@import '../styles/colors.scss';
+
+.info-container {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    width: 85px;
+    height: 85px;
+    .btn-info {
+        width: 85px;
+        height: 85px;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border:0;
+        .info {
+            background: url('/assets/icon/icon-info.svg') no-repeat center center!important;
+            height: 85px;
+            width:85px;
+            background-size: 130px!important;
+        }
+        &:hover {
+            background: $primary3!important;
+            .info {
+                background: url('/assets/icon/icon-info-hover.svg') no-repeat center center!important;
+                background-size: 130px!important;
+            }
+        }
+    }
+}
+.ant-modal{
+  .ant-modal-content {  
+    background:$primary2-transparency;
+    padding: 50px 80px;
+    border-radius: 60px;
+    h2 {
+        text-align: center;
+        color: $primary4;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 25px;
+        margin-bottom: 30px;
+        &:first-line {
+            color: white;
+        }
+    }
+    p {
+        color: $secondary2;
+        font-size: 18px;
+        line-height: 150%;
+    }
+  }
+  .ant-modal-close {
+    color: $secondary2;
+    top:20px;
+    right: 20px;
+    &:hover {
+        color: $secondary2;
+    }
+    .ant-modal-close-x {
+        font-size:20px;
+    }
+  }
+  .btn-container {
+    text-align: center;
+    margin: 50px 0 30px 0;
+  }
+  .btn-modal-info {
+    background: $bg-color;
+    border:0;
+    border-radius: 100px;
+    color: $primary1;
+    font-size: 'Sofia sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 16px;
+    height: auto;
+    letter-spacing: 2px;
+    font-weight: 800;
+    padding: 5px 50px;
+    .icon{
+        width: 40px
+    }
+    &:hover {
+        color: $primary1!important;
+        background: $secondary2!important;
+    }
+  }
+}
