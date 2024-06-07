@@ -4,9 +4,9 @@ const Scale = () => {
   return (
     <div className="scale-container">
       <h2>Escala de probabilidades</h2>
-      <div className='scale'>
+      <div className="scale">
         <span>0%</span>
-        <div className='bar-scale'></div>
+        <div className="bar-scale"></div>
         <span>100%</span>
       </div>
     </div>

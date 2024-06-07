@@ -1,7 +1,17 @@
 $bg-color: #fbfbfb;
 
 $primary1: #0fb6cc;
-$secondary1: #EF4533;
+$primary2: #006272;
+$primary3: #4891dc;
+$secondary1: #ef4533;
 $disabled: #b2b2b2;
 
-$gradient-scale: linear-gradient(90deg, rgba(255,245,240,1) 0%, rgba(253,201,180,1) 20%, rgba(252,138,107,1) 40%, rgba(239,69,51,1) 60%, rgba(187,21,26,1) 80%, rgba(103,0,13,1) 100%);
+$gradient-scale: linear-gradient(
+  90deg,
+  rgba(255, 245, 240, 1) 0%,
+  rgba(253, 201, 180, 1) 20%,
+  rgba(252, 138, 107, 1) 40%,
+  rgba(239, 69, 51, 1) 60%,
+  rgba(187, 21, 26, 1) 80%,
+  rgba(103, 0, 13, 1) 100%
+);
