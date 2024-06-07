@@ -23,12 +23,18 @@
     font-weight: 700;
     padding: 0 25px !important;
     margin: 0 80px !important;
+    color: $primary1 !important;
+    &:hover {
+      &::after {
+        border-bottom-width: 0!important;
+      }
+    }
   }
   .ant-menu-item-selected {
     color: $primary1 !important;
   }
   .ant-menu-item-disabled {
-    color: $disabled;
+    color: $disabled!important;
     background: url('/assets/icon/icon-lock.svg') no-repeat right 20% !important;
     background-size: 25px !important;
   }
