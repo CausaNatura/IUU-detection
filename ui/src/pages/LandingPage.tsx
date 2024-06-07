@@ -14,7 +14,7 @@ const LandingPage = () => {
         <Col xs={16}>
           <Map />
         </Col>
-        <Col xs={8}>
+        <Col className="g-left-container" xs={8}>
           <Scale />
           <Zone />
           <FeatureMessage />
