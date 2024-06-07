@@ -1,0 +1,68 @@
+@import '../styles/colors.scss';
+
+.map-container {
+  background: url('/assets/map.jpg') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  padding:40px
+}
+.btn-action {
+  background:transparent;
+  height: auto;
+  width:250px;
+  display: flex;
+  align-items: center;
+  border:0;
+  &:hover {
+    background:transparent!important;
+    border: 0;
+  }
+  .btn-icon {
+    width: 85px!important;
+    height: 85px!important;
+    background-size: 75px;
+    background-color: #fff!important;
+    border-radius: 1000px!important;
+    padding:0!important;
+    z-index: 4;
+    font-family: 'Sofia Sans', sans-serif!important;
+    box-shadow: -5px 5px 10px rgba($color: #000000, $alpha: 0.3);
+  }
+  span {
+    padding: 12px 15px 12px 20px;
+    margin-left: -10px;
+    border-radius: 0 100px 100px 0;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    &.alerta {
+      background: $primary4!important;
+    }
+    &.bitacora {
+      background: $primary1!important;
+    }
+  }
+}
+.alerta {
+  background: url('/assets/icon/icon-alerta.svg') no-repeat center center!important;
+}
+.bitacora {
+  background: url('/assets/icon/icon-bitacora.svg') no-repeat center center!important;
+}
+.disabled {
+  .alerta {
+    background: url('/assets/icon/icon-alerta-default.svg') no-repeat center center white!important;
+  }
+  .bitacora {
+  background: url('/assets/icon/icon-bitacora-default.svg') no-repeat center center white!important;
+  }
+  span {
+    &.alerta, &.bitacora {
+      background-image: none!important;
+      background-color: $dark-transparency!important;
+    }
+  }
+}
