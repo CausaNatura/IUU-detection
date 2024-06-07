@@ -1,11 +1,17 @@
 import { Button } from 'antd';
 import '../../styles/map.scss';
 
-function ButtonView() {
+type ButtonProps = {
+  text: string,
+  btnClass: string,
+  btnDefault?: 'disabled' | '',
+}
+
+function ButtonView({ text, btnClass, btnDefault = ''  } : ButtonProps) {
   return (
-    <Button href="#">
-      
-      <span>Alertas</span>
+    <Button className={`${btnDefault}` + ' btn-action'} href="#">
+      <div className={`${btnClass}` + ' btn-icon'} />
+      <span className={btnClass}>{text}</span>
     </Button>
   );
 }
@@ -13,7 +19,8 @@ function ButtonView() {
 const Map = () => {
   return (
     <div className="map-container">
-      <ButtonView />
+      <ButtonView text='Alertas' btnClass='alerta' btnDefault='disabled' />
+      <ButtonView text='Bitácora' btnClass='bitacora' btnDefault='' />
     </div>
   );
 };
