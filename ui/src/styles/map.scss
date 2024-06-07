@@ -1,0 +1,9 @@
+@import '../styles/colors.scss';
+
+.map-container {
+  background: url('/assets/map.jpg') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: block;
+}

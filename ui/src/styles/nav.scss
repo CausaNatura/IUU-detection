@@ -26,7 +26,7 @@
     color: $primary1 !important;
     &:hover {
       &::after {
-        border-bottom-width: 0!important;
+        border-bottom-width: 0 !important;
       }
     }
   }
@@ -34,7 +34,7 @@
     color: $primary1 !important;
   }
   .ant-menu-item-disabled {
-    color: $disabled!important;
+    color: $disabled !important;
     background: url('/assets/icon/icon-lock.svg') no-repeat right 20% !important;
     background-size: 25px !important;
   }
