@@ -1,7 +1,7 @@
 @import '../styles/colors.scss';
 
 .nav {
-  background: $bg-color!important;
+  background: $bg-color !important;
   margin: 0;
   text-align: center;
   padding: 30px 0;
@@ -11,7 +11,7 @@
 }
 .ant-menu-light {
   background: transparent;
-  border-bottom:0;
+  border-bottom: 0;
   justify-content: center;
 }
 .ant-menu {
@@ -21,18 +21,18 @@
     letter-spacing: 2px;
     font-family: 'Sofia Sans', sans-serif;
     font-weight: 700;
-    padding: 0 25px!important;
-    margin: 0 80px!important;
+    padding: 0 25px !important;
+    margin: 0 80px !important;
   }
   .ant-menu-item-selected {
-    color: $primary1!important;
+    color: $primary1 !important;
   }
   .ant-menu-item-disabled {
     color: $disabled;
-    background: url('/assets/icon/icon-lock.svg') no-repeat right 20%!important;
-    background-size: 25px!important;
+    background: url('/assets/icon/icon-lock.svg') no-repeat right 20% !important;
+    background-size: 25px !important;
   }
   .ant-menu-item-selected::after {
-    border-bottom-width: 0!important;
+    border-bottom-width: 0 !important;
   }
 }
