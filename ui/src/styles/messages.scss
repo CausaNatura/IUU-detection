@@ -1,0 +1,23 @@
+@import '../styles/colors.scss';
+
+.message-container {
+  height: 300px;
+  overflow: scroll;
+  padding: 0px 30px;
+  margin: 40px 0;
+  .single-message-wrap {
+    margin: 0 0 40px 0;
+  }
+  h2 {
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $primary1;
+  }
+  p {
+    color: $dark-text;
+    font-size: 17px;
+    line-height: 150%;
+  }
+}

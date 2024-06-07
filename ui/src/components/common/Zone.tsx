@@ -1,8 +1,7 @@
 import { Image } from 'antd';
 import '../../styles/zone.scss';
 import Lock from '/assets/icon/icon-lock.svg';
-import type { DatePickerProps } from 'antd';
-import { DatePicker, Space } from 'antd';
+import { DatePicker } from 'antd';
 
 const Zone = () => {
   return (
@@ -19,7 +18,7 @@ const Zone = () => {
         con preddicciones estimadas el <br />
         <span> 14 de mayo de 2024 </span> para el
       </h2>
-      <DatePicker className='calendar' placeholder='Selecciona una fecha'/>
+      <DatePicker className="calendar" placeholder="Selecciona una fecha" />
     </div>
   );
 };
