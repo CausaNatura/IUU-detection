@@ -31,7 +31,9 @@ const UserMenu = () => {
     >
       <Dropdown menu={{ items }}>
         <Link onClick={(e) => e.preventDefault()} className="user-link">
-          <span className="username">Mónica Navarro</span>
+          <span className="username">
+            Mónica <b>Navarro</b>
+          </span>
           <UserOutlined className="icon" />
         </Link>
       </Dropdown>
