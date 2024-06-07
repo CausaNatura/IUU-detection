@@ -2,6 +2,9 @@ import { Col, Row } from 'antd';
 import 'styles/global.scss';
 import { PageTitle } from 'components/common/PageTitle';
 import Map from 'components/common/Map';
+import Scale from 'components/common/Scale';
+import Zone from 'components/common/Zone';
+import FeatureMessage from 'components/common/FeatureMessage';
 
 const LandingPage = () => {
   return (
@@ -12,6 +15,9 @@ const LandingPage = () => {
           <Map />
         </Col>
         <Col xs={8}>
+          <Scale />
+          <Zone />
+          <FeatureMessage />
         </Col>
       </Row>
     </div>

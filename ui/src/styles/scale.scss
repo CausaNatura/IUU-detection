@@ -1,0 +1,32 @@
+@import '../styles/colors.scss';
+
+.scale-container {
+  text-align: center;
+  padding: 60px 0;
+  border-bottom: 1px solid $disabled;
+  h2 {
+    font-size: 14px;
+    font-family: 'Sofia Sans', sans-serif;
+    color: $secondary1 !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  .scale {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+    color: $primary1;
+    font-weight: 600;
+    .bar-scale {
+      width: 100%;
+      height: 20px;
+      background: $gradient-scale;
+      border-radius: 100px;
+    }
+    span {
+      margin: 0 15px;
+    }
+  }
+}
