@@ -9,7 +9,7 @@ const MainLayout = () => {
     <Layout className="g-main-layout">
       <Header>
         <HeaderContent />
-        <NavMenu/>
+        <NavMenu />
       </Header>
       <Content className="g-main-layout-container">
         <Outlet />
