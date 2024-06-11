@@ -5,6 +5,7 @@ import Map from 'components/common/Map';
 import Scale from 'components/common/Scale';
 import Zone from 'components/common/Zone';
 import FeatureMessage from 'components/common/FeatureMessage';
+import MessageProblem from 'components/common/MessageProblem';
 
 const LandingPage = () => {
   return (
@@ -18,6 +19,7 @@ const LandingPage = () => {
           <Scale />
           <Zone />
           <FeatureMessage />
+          <MessageProblem />
         </Col>
       </Row>
     </div>
