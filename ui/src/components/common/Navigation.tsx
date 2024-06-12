@@ -34,6 +34,9 @@ const NavMenu = () => {
         selectedKeys={[current]}
         mode="horizontal"
         items={items}
+        overflowedIndicator={false}
+        className='menu'
+        disabledOverflow={true}
       />
     </div>
   );
