@@ -7,15 +7,14 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useState } from 'react';
 
 const MessageProblem = () => {
-  const [copyStatus, setCopyStatus] = useState(false); 
-  
-  const onCopyText = () => {
+  const [copyStatus, setCopyStatus] = useState(false);
 
+  const onCopyText = () => {
     setCopyStatus(true);
 
-    setTimeout(() => setCopyStatus(false), 3000); 
+    setTimeout(() => setCopyStatus(false), 3000);
   };
-  
+
   return (
     <div className="message-problem-container">
       <Popconfirm
@@ -29,17 +28,22 @@ const MessageProblem = () => {
           <>
             <p>
               Envía un correo con el asunto
-              <span className="subject"> Error predictor datacenter</span></p>
-              <p>
-                <CopyToClipboard text='info@causanatura.org' onCopy={onCopyText}>
-                  <div className="mail">
-                      info@causanatura.org <Image src={Copy} preview={false} />
-                  </div>
-                </CopyToClipboard>
-                {copyStatus && <div className='copied'>Se ha copiado el email en el portapapeles</div>}
-              </p>
+              <span className="subject"> Error predictor datacenter</span>
+            </p>
             <p>
-                O da <Link className="link">click aquí</Link> para conectar con tu
+              <CopyToClipboard text="info@causanatura.org" onCopy={onCopyText}>
+                <div className="mail">
+                  info@causanatura.org <Image src={Copy} preview={false} />
+                </div>
+              </CopyToClipboard>
+              {copyStatus && (
+                <div className="copied">
+                  Se ha copiado el email en el portapapeles
+                </div>
+              )}
+            </p>
+            <p>
+              O da <Link className="link">click aquí</Link> para conectar con tu
               cuenta de email de forma automática
             </p>
           </>
