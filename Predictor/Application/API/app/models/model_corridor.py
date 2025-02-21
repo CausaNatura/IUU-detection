@@ -10,9 +10,10 @@ import geopandas as gpd
 import pickle
 import os
 cdir = os.path.dirname(os.path.abspath(__file__))
+API_KEY = os.environ.get("API_KEY")
 
 def get_weather_forecast(location):
-    key = '3c7c8dff6b4b48d9a21142127233103'
+    key = API_KEY
     url = 'http://api.weatherapi.com/v1/forecast.json'
     lang = 'esp'
     q = location
