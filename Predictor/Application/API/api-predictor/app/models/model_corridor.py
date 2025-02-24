@@ -10,6 +10,9 @@ import geopandas as gpd
 import pickle
 import os
 cdir = os.path.dirname(os.path.abspath(__file__))
+from dotenv import load_dotenv
+
+load_dotenv()
 API_KEY = os.environ.get("API_KEY")
 
 def get_weather_forecast(location):
