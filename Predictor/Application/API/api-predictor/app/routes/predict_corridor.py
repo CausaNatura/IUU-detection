@@ -7,7 +7,7 @@ from typing import List
 
 router = APIRouter()
 
-@router.get('/predict', response_model=List[PredictionResponse])
+@router.get('/predict_corridor', response_model=List[PredictionResponse])
 async def get_prediction(location:str):
     request = PredictionRequest(location=location)
     try:

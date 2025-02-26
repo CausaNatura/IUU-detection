@@ -6,7 +6,8 @@ Entrenamiento actualizado: Diciembre 2023
 import requests
 import json
 import pandas as pd
-import geopandas as gpd
+#import geopandas as gpd
+import json
 import pickle
 import os
 cdir = os.path.dirname(os.path.abspath(__file__))
@@ -43,11 +44,22 @@ def get_weather_forecast(location):
 
 def prepare_prediction_dataset(wd, location):
     zones=''
-    if location == 'Loreto Baja California Sur':
+    ''' if location == 'Loreto Baja California Sur':
         zones = gpd.read_file(os.path.join(cdir, 'H3', 'h3_loreto.geojson'))
     elif location == 'Cabo Pulmo Baja California Sur':
         zones = gpd.read_file(os.path.join(cdir, 'H3', 'h3_cabo_pulmo.geojson'))
-    dataset = zones[['h3_id','geometry','PR_MAX','PR_MIN']] 
+    dataset = zones[['h3_id','geometry','PR_MAX','PR_MIN']]'''
+    if location == 'Loreto Baja California Sur':
+        #zones = gpd.read_file(os.path.join(cdir, 'H3', 'h3_loreto.geojson'))
+        with open('h3_loreto.geojson') as f: zones = json.load(f)
+        zones = pd.json_normalize(zones['features'])
+        zones = zones.drop(columns='geometry')
+    elif location == 'Cabo Pulmo Baja California Sur':
+        #zones = gpd.read_file(os.path.join(cdir, 'H3', 'h3_cabo_pulmo.geojson'))
+        with open('h3_cabo_pulmo.geojson') as f: zones = json.load(f)
+        zones = pd.json_normalize(zones['features'])
+        zones = zones.drop(columns='geometry')
+    dataset = zones[['h3_id','PR_MAX','PR_MIN']]
     deep_cols = [col for col in zones.columns if "DP_" in col]
     dataset['DIST_MIN'] = zones[deep_cols].min(axis=1)
     dataset['DIST_MAX'] = zones[deep_cols].max(axis=1)
@@ -57,14 +69,14 @@ def prepare_prediction_dataset(wd, location):
             df = dataset.copy()
         else:
             df = pd.concat([df,dataset],ignore_index=True)
-    dataset = df[['h3_id','date','month','dayweek','wind_kph','humidity','temp_c','moon_phase','PR_MAX','PR_MIN','DIST_MIN','DIST_MAX','geometry']]
+    dataset = df[['h3_id','date','month','dayweek','wind_kph','humidity','temp_c','moon_phase','PR_MAX','PR_MIN','DIST_MIN','DIST_MAX']]
     return dataset
 
 def predict(location='Loreto Baja California Sur'):
     wd = get_weather_forecast(location)
     dataset = prepare_prediction_dataset(wd, location)
     model = pickle.load(open((os.path.join(cdir, 'brf_corridor.pk1')), 'rb'))
-    prediction = model.predict_proba(dataset.drop(columns=['h3_id','date','geometry']))
+    prediction = model.predict_proba(dataset.drop(columns=['h3_id','date']))
     adjuster = pickle.load(open((os.path.join(cdir, 'adjuster_corridor.pk1')) , 'rb')) # ADJUST PROBABILITIES
     prediction = adjuster.transform(prediction[:,1])
     output = pd.concat([dataset['h3_id'], dataset['date'],pd.DataFrame(prediction)], axis=1)
