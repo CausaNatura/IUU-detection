@@ -6,7 +6,6 @@ Entrenamiento actualizado: Diciembre 2023
 import requests
 import json
 import pandas as pd
-#import geopandas as gpd
 import json
 import pickle
 import os
@@ -44,21 +43,13 @@ def get_weather_forecast(location):
 
 def prepare_prediction_dataset(wd, location):
     zones=''
-    ''' if location == 'Loreto Baja California Sur':
-        zones = gpd.read_file(os.path.join(cdir, 'H3', 'h3_loreto.geojson'))
-    elif location == 'Cabo Pulmo Baja California Sur':
-        zones = gpd.read_file(os.path.join(cdir, 'H3', 'h3_cabo_pulmo.geojson'))
-    dataset = zones[['h3_id','geometry','PR_MAX','PR_MIN']]'''
     if location == 'Loreto Baja California Sur':
-        #zones = gpd.read_file(os.path.join(cdir, 'H3', 'h3_loreto.geojson'))
-        with open('h3_loreto.geojson') as f: zones = json.load(f)
+        with open(os.path.join(cdir, 'H3', 'h3_loreto.geojson')) as f: zones = json.load(f)
         zones = pd.json_normalize(zones['features'])
-        zones = zones.drop(columns='geometry')
     elif location == 'Cabo Pulmo Baja California Sur':
-        #zones = gpd.read_file(os.path.join(cdir, 'H3', 'h3_cabo_pulmo.geojson'))
-        with open('h3_cabo_pulmo.geojson') as f: zones = json.load(f)
+        with open(os.path.join(cdir, 'H3', 'h3_cabo_pulmo.geojson')) as f: zones = json.load(f)
         zones = pd.json_normalize(zones['features'])
-        zones = zones.drop(columns='geometry')
+    zones.columns = [col.replace('properties.', '') for col in zones.columns]
     dataset = zones[['h3_id','PR_MAX','PR_MIN']]
     deep_cols = [col for col in zones.columns if "DP_" in col]
     dataset['DIST_MIN'] = zones[deep_cols].min(axis=1)
