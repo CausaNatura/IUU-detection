@@ -1,4 +1,4 @@
-from prpi_datavalidation import __version__
+from datavalidation import __version__
 
 
 def test_version():
