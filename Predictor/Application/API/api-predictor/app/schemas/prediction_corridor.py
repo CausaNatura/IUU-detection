@@ -4,7 +4,7 @@ import difflib
 
 class PredictionRequest(BaseModel):
     location: str
-    locations: ClassVar[list[str]]= ['Loreto Baja California Sur', 'Cabo Pulmo Baja California Sur']
+    locations: ClassVar[list[str]]= ['Loreto Baja California Sur', 'Cabo Pulmo Baja California Sur','Corredor San Basilio-BDLP']
     
     @validator("location")
     def match_location(cls, v, values, **kwargs):

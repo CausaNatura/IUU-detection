@@ -49,6 +49,9 @@ def prepare_prediction_dataset(wd, location):
     elif location == 'Cabo Pulmo Baja California Sur':
         with open(os.path.join(cdir, 'H3', 'h3_cabo_pulmo.geojson')) as f: zones = json.load(f)
         zones = pd.json_normalize(zones['features'])
+    elif location == 'Corredor San Basilio-BDLP':
+        with open(os.path.join(cdir, 'H3', 'h3_corredor.geojson')) as f: zones = json.load(f)
+        zones = pd.json_normalize(zones['features'])
     zones.columns = [col.replace('properties.', '') for col in zones.columns]
     dataset = zones[['h3_id','PR_MAX','PR_MIN']]
     deep_cols = [col for col in zones.columns if "DP_" in col]
@@ -70,6 +73,7 @@ def predict(location='Loreto Baja California Sur'):
     prediction = model.predict_proba(dataset.drop(columns=['h3_id','date']))
     adjuster = pickle.load(open((os.path.join(cdir, 'adjuster_corridor.pk1')) , 'rb')) # ADJUST PROBABILITIES
     prediction = adjuster.transform(prediction[:,1])
-    output = pd.concat([dataset['h3_id'], dataset['date'],pd.DataFrame(prediction)], axis=1)
+    output = pd.concat([dataset['h3_id'].reset_index(drop=True), dataset['date'].reset_index(drop=True),pd.DataFrame(prediction)], axis=1)
     output.columns=['h3_id','date','prob']
-    return json.loads(output.to_json(orient='records'))
+    #return json.loads(output.to_json(orient='records'))
+    return output.to_dict(orient='records')
